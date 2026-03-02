@@ -33,6 +33,44 @@ $escalas_hoje = (int)$pdo->query("
     AND published = 1
 ")->fetchColumn();
 
+// Cobertura operacional do dia (posto com ao menos 1 agente designado)
+$coverage_total = 0;
+$coverage_ok = 0;
+$coverage_gap = 0;
+$coverage_pct = 0;
+$postos_criticos = [];
+
+try {
+    $cov_rows = $pdo->query("
+        SELECT sd.id,
+               COALESCE(p.name, '—') AS post,
+               COUNT(sa.id) AS assigned
+        FROM schedule_days sd
+        LEFT JOIN posts p ON p.id = sd.post_id
+        LEFT JOIN shift_assignments sa ON sa.schedule_day_id = sd.id
+        WHERE sd.ref_date = CURDATE()
+        GROUP BY sd.id, p.name
+        ORDER BY assigned ASC, p.name ASC
+    ")->fetchAll(PDO::FETCH_ASSOC);
+
+    $coverage_total = count($cov_rows);
+    foreach ($cov_rows as $row) {
+        $assigned = (int)$row['assigned'];
+        if ($assigned > 0) {
+            $coverage_ok++;
+        } else {
+            $coverage_gap++;
+            $postos_criticos[] = (string)$row['post'];
+        }
+    }
+
+    $coverage_pct = $coverage_total > 0
+        ? (int)round(($coverage_ok / $coverage_total) * 100)
+        : 0;
+} catch (Throwable $e) {
+    // fallback silencioso no dashboard
+}
+
 /* ===============================
    ESCALAS DOS PRÓXIMOS DIAS
 ================================*/
@@ -55,7 +93,7 @@ $proximas = $pdo->query("
   <!-- Relatório do dia -->
   <div class="card lg:col-span-4">
     <h2 class="font-semibold text-lg">📅 Relatório do dia — <?=date('d/m/Y')?></h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-4 mt-4">
       
       <div class="card p-4 bg-gray-800/60">
         <div class="text-sm text-gray-400">Funcionários ativos</div>
@@ -75,6 +113,16 @@ $proximas = $pdo->query("
       <div class="card p-4 bg-gray-800/60">
         <div class="text-sm text-gray-400">Escalas publicadas hoje</div>
         <div class="text-2xl font-bold"><?=$escalas_hoje?></div>
+      </div>
+
+      <div class="card p-4 bg-gray-800/60">
+        <div class="text-sm text-gray-400">Cobertura operacional</div>
+        <div class="text-2xl font-bold text-emerald-300"><?=$coverage_pct?>%</div>
+      </div>
+
+      <div class="card p-4 bg-gray-800/60">
+        <div class="text-sm text-gray-400">Postos sem efetivo</div>
+        <div class="text-2xl font-bold text-red-300"><?=$coverage_gap?></div>
       </div>
 
     </div>
@@ -109,6 +157,13 @@ $proximas = $pdo->query("
       <?php endforeach; ?>
       </tbody>
     </table>
+
+    <?php if ($postos_criticos): ?>
+      <div class="mt-4 p-3 rounded-xl border border-red-800/60 bg-red-950/20">
+        <div class="text-sm text-red-200 font-semibold">Postos críticos hoje (sem efetivo)</div>
+        <div class="text-sm text-red-100 mt-1"><?=htmlspecialchars(implode(', ', array_slice($postos_criticos, 0, 8)))?></div>
+      </div>
+    <?php endif; ?>
   </div>
 
   <!-- Ações rápidas -->
