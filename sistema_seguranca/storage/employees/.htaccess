@@ -1,0 +1,10 @@
+Options -Indexes
+php_flag engine off
+
+<FilesMatch "\.(php|phtml|phar|cgi|pl|asp|aspx)$">
+  Deny from all
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>

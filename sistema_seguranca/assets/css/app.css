@@ -1,0 +1,57 @@
+:root{ --accent:#f97316; }
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;letter-spacing:.1px}
+a{transition:color .2s ease}
+.badge{padding:.2rem .5rem;border-radius:.5rem;background:#1f2937;color:#f3f4f6;font-size:.75rem}
+.btn{background:var(--accent);padding:.6rem 1rem;border-radius:12px}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:.6rem .5rem;border-bottom:1px solid #374151}
+.input{background:#0b1220;border:1px solid #374151;color:#e5e7eb;padding:.5rem;border-radius:.5rem;width:100%}
+.select{background:#0b1220;border:1px solid #374151;color:#e5e7eb;padding:.5rem;border-radius:.5rem;width:100%}
+:root{
+  --ring: 0 0% 100%;
+}
+*{outline:0}
+::selection{ background:#f97316; color:#111 }
+html,body{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu}
+
+/* Cards / glass */
+.card{
+  background: color-mix(in oklab, #0b0f1a 85%, #fff 15%);
+  border:1px solid #202a3b; border-radius:1rem; padding:1rem; box-shadow:0 10px 30px rgba(0,0,0,.35)
+}
+.card-muted{ background: rgba(255,255,255,.03) }
+
+/* Inputs */
+.input, .select, textarea{
+  width:100%; padding:.65rem .8rem; border-radius:.75rem;
+  background:#0b1220; color:#e5e7eb; border:1px solid #2b364a
+}
+.input:focus, .select:focus, textarea:focus{
+  outline:2px solid rgba(249,115,22,.35); border-color:#3b4b67
+}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  padding:.65rem 1rem; border-radius:.9rem; font-weight:600;
+  background:#f97316; color:#0b0f1a; border:1px solid #b45309
+}
+.btn:hover{ filter:brightness(1.05) }
+
+/* Table */
+.table{ width:100%; border-collapse:separate; border-spacing:0 }
+.table th{
+  text-align:left; font-size:.8rem; text-transform:uppercase; letter-spacing:.06em;
+  color:#cbd5e1; background:#0e1625; border-bottom:1px solid #20314b; padding:.7rem .75rem; position:sticky; top:0; z-index:1
+}
+.table td{ padding:.7rem .75rem; border-bottom:1px solid #1e293b }
+.tr:hover{ background:rgba(255,255,255,.03) }
+
+/* Badge */
+.badge{ display:inline-flex; align-items:center; gap:.4rem; padding:.25rem .55rem; border-radius:.5rem; font-size:.75rem; border:1px solid #30415c; background:#111827; color:#d1d5db }
+.badge.orange{ background:#3b2416; color:#fdba74; border-color:#7c3e16 }
+.badge.green{ background:#0f2a1a; color:#86efac; border-color:#166534 }
+.badge.red{ background:#2a0f12; color:#fca5a5; border-color:#7f1d1d }
+
+/* Scrollbar */
+::-webkit-scrollbar{height:10px;width:10px}
+::-webkit-scrollbar-thumb{background:#263248;border-radius:999px}

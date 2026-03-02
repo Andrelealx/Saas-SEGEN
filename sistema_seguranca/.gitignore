@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.env.*
+
+# Local secrets
+/core/config.local.php
+
+# Runtime/generated files
+/uploads/
+/storage/employees/*
+!/storage/employees/.htaccess
+
+# Logs
+*.log
