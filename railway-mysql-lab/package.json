@@ -1,0 +1,25 @@
+{
+  "name": "railway-mysql-lab",
+  "version": "1.0.0",
+  "description": "Projeto de teste para deploy no Railway com MySQL",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": [
+    "railway",
+    "mysql",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "mysql2": "^3.14.5"
+  }
+}

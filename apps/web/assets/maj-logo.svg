@@ -1,0 +1,14 @@
+<svg width="360" height="96" viewBox="0 0 360 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="4" width="88" height="88" rx="22" fill="url(#paint0_linear)" />
+  <path d="M24 66V30H35.8L48 52.2L60.2 30H72V66H61.8V46.7L52.1 63.7H43.9L34.2 46.7V66H24Z" fill="#F8FAFC" />
+  <path d="M116 66V30H130.2C136.6 30 141.7 31.5 145.4 34.5C149.1 37.5 151 41.8 151 47.5C151 53.2 149.1 57.5 145.4 60.5C141.7 63.5 136.6 65 130.2 65H116V66ZM126.6 56.3H130.1C133.5 56.3 136.1 55.5 138 53.9C139.9 52.3 140.9 50.1 140.9 47.4C140.9 44.7 139.9 42.5 138 40.9C136.1 39.3 133.5 38.5 130.1 38.5H126.6V56.3Z" fill="#0F172A" />
+  <path d="M168 66L181.8 30H194.4L208.2 66H197L194.5 58.7H181.5L179 66H168ZM184.3 50.4H191.7L188 39.6L184.3 50.4Z" fill="#0F172A" />
+  <path d="M219 66V30H229.6V56.2H247V66H219Z" fill="#0F172A" />
+  <text x="260" y="59" fill="#64748B" font-family="Manrope, Arial, sans-serif" font-size="14" font-weight="700">Software</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="8" y1="8" x2="88" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D4ED8" />
+      <stop offset="1" stop-color="#64748B" />
+    </linearGradient>
+  </defs>
+</svg>

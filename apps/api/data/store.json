@@ -1,0 +1,156 @@
+{
+  "tenants": {
+    "dev-tenant": {
+      "theme": {
+        "brandName": "MAJ Software",
+        "primaryColor": "#1D4ED8",
+        "secondaryColor": "#64748B",
+        "logoUrl": "/app/assets/maj-logo.svg"
+      },
+      "users": [
+        {
+          "id": "a4ea9de1-bd91-4e52-80c0-94101da3a84b",
+          "name": "Administrador",
+          "email": "admin@softhouse.com",
+          "password": "admin123",
+          "role": "admin",
+          "active": true,
+          "createdAt": "2026-02-25T19:05:16.625Z"
+        },
+        {
+          "id": "dd23a170-c5da-40c1-9d4e-5854f70fbbbf",
+          "name": "Comercial",
+          "email": "comercial@softhouse.com",
+          "password": "admin123",
+          "role": "comercial",
+          "active": true,
+          "createdAt": "2026-02-25T19:05:16.625Z"
+        },
+        {
+          "id": "7e65d73c-fab6-4431-982a-e93343df4cb9",
+          "name": "Gestao",
+          "email": "gestao@softhouse.com",
+          "password": "admin123",
+          "role": "gestao",
+          "active": true,
+          "createdAt": "2026-02-25T19:05:16.625Z"
+        },
+        {
+          "id": "5c2c58a2-7b6b-4f48-ab83-11033501d25a",
+          "name": "Operacao",
+          "email": "operacao@softhouse.com",
+          "password": "admin123",
+          "role": "operacao",
+          "active": true,
+          "createdAt": "2026-02-25T19:05:16.625Z"
+        }
+      ],
+      "leads": [
+        {
+          "id": "8534dde3-1445-4863-a162-50bc19848613",
+          "companyName": "Empresa X",
+          "contactName": "Joao",
+          "stage": "novo",
+          "createdAt": "2026-02-25T19:09:58.847Z",
+          "updatedAt": "2026-02-25T19:09:58.847Z"
+        },
+        {
+          "id": "5065af82-a744-4399-b1fe-0a3dd5fbb2f6",
+          "companyName": "Clinica Aurora",
+          "contactName": "Ana",
+          "email": "ana@aurora.com",
+          "stage": "novo",
+          "createdAt": "2026-02-25T19:05:16.704Z",
+          "updatedAt": "2026-02-25T19:05:16.704Z"
+        }
+      ],
+      "projects": [
+        {
+          "id": "10b4074c-63a6-405b-ab17-d791f51e37bb",
+          "clientName": "Empresa X",
+          "name": "Site Institucional",
+          "type": "white_label",
+          "status": "planejado",
+          "createdAt": "2026-02-25T19:09:58.855Z",
+          "updatedAt": "2026-02-25T19:09:58.855Z"
+        }
+      ],
+      "proposals": [
+        {
+          "id": "c0e071d1-ffe4-4756-808e-d5c3fed88416",
+          "clientName": "Empresa X",
+          "title": "Proposta Site",
+          "scopeSummary": "Landing page",
+          "amount": 3500,
+          "status": "rascunho",
+          "createdAt": "2026-02-25T19:09:58.863Z",
+          "updatedAt": "2026-02-25T19:09:58.863Z"
+        }
+      ],
+      "invoices": [
+        {
+          "id": "2457712b-fd60-4cf9-9f50-543eed37279c",
+          "clientName": "Empresa X",
+          "description": "Setup",
+          "amount": 1500,
+          "dueDate": "2026-03-05",
+          "status": "pendente",
+          "createdAt": "2026-02-25T19:09:58.870Z",
+          "updatedAt": "2026-02-25T19:09:58.870Z"
+        }
+      ],
+      "tickets": [
+        {
+          "id": "8f620e39-4e5b-4023-ba9a-94391f093949",
+          "clientName": "Empresa X",
+          "title": "Ajuste de layout",
+          "priority": "media",
+          "status": "aberto",
+          "messages": [],
+          "createdAt": "2026-02-25T19:09:58.877Z",
+          "updatedAt": "2026-02-25T19:09:58.877Z"
+        }
+      ],
+      "products": [
+        {
+          "id": "abc46922-2b98-4327-b748-ce3995d78ac3",
+          "code": "SITE-CMS",
+          "name": "Site CMS",
+          "basePrice": 1800,
+          "setupDays": 7,
+          "active": true,
+          "createdAt": "2026-02-25T19:09:58.884Z",
+          "updatedAt": "2026-02-25T19:09:58.884Z"
+        },
+        {
+          "id": "0cd5d784-ccf8-4d2f-9e48-cbdb433a75f3",
+          "code": "AGENDA-PRO",
+          "name": "AgendaPro",
+          "segment": "Saude e beleza",
+          "description": "Agendamento e atendimento para clinicas e saloes.",
+          "basePrice": 1890,
+          "setupDays": 7,
+          "active": true,
+          "createdAt": "2026-02-25T19:05:16.625Z",
+          "updatedAt": "2026-02-25T19:05:16.625Z"
+        },
+        {
+          "id": "5f3d0314-37ee-4eda-ad9a-16942bf781df",
+          "code": "MENU-GO",
+          "name": "MenuGo",
+          "segment": "Alimentacao",
+          "description": "Cardapio digital com pedidos e status.",
+          "basePrice": 2490,
+          "setupDays": 10,
+          "active": true,
+          "createdAt": "2026-02-25T19:05:16.625Z",
+          "updatedAt": "2026-02-25T19:05:16.625Z"
+        }
+      ],
+      "clients": [],
+      "tasks": [],
+      "goals": [],
+      "activities": []
+    }
+  }
+}
